@@ -16,64 +16,67 @@
             display: flex;
             justify-content: center;
         }
+
         .left-container {
             width: 60%;
-           
+
         }
+
         .left-container>* {
             height: 50%;
             box-sizing: border-box;
             /* border-box impide que el elemento se sobresalga del límite del padre */
         }
+
         .right-container {
             width: 40%;
             height: 100%;
         }
+
         .right-container aside {
             height: 100%;
             padding: 40px 0;
         }
     </style>
 </head>
+
 <body>
 
     <h1>elementos semánticos de HTML</h1>
 
-    <div class="container">
-        <header class="container">
-            <h1>Encabezado</h1>
-        </header>
-        <nav class="container">
-            <h1>Menú de navegación</h1>
-        </nav>
 
-        <div class="flex-container">
-            <div class="left-container">
-                <section class="container">
-                    <h1>Sección</h1>
-                </section>
-                <article class="container">
-                    <h1>Artículo</h1>
-                </article>
-            </div>
-    
-            <div class="right-container">
-                <aside class="container">
-                    <h1>Aside</h1>
-                </aside>
-            </div>
+    <header class="container">
+        <h1>Encabezado</h1>
+    </header>
+    <nav class="container">
+        <h1>Menú de navegación</h1>
+    </nav>
+
+    <div class="flex-container">
+        <div class="left-container">
+            <section class="container">
+                <h1>Sección</h1>
+            </section>
+            <article class="container">
+                <h1>Artículo</h1>
+            </article>
         </div>
 
-        <footer class="container">
-            <h1>Pie de página</h1>
-        </footer>
-
+        <div class="right-container">
+            <aside class="container">
+                <h1>Aside</h1>
+            </aside>
+        </div>
     </div>
 
-     </div>
-
+    <footer class="container">
+        <h1>Pie de página</h1>
+    </footer>
 
     
+
+
+
 
 
 </body>
