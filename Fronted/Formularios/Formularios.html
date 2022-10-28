@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link reel="stylesheet" href="general.css">
+
+    <!-- con el mayor selecciona directamenete a los hijos del form -->
+    <style>
+        form.simple-form{
+            background: linear-gradient(90deg,rgba(149, 203, 232),transparent);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+
+
+        form.simple-form>div {
+            display: flex;
+            justify-content: space-between;
+
+            width: 350px;
+            margin-bottom: 5px;
+        }
+        /* selecciona al div que es el ultimo hijo del form */
+        form.simple-form div:last-child {
+            justify-content: flex-start;
+        }
+        /* nos ayuda a estilizar las celdas */
+        form.simple-form input, form div button {
+            border: none;
+            border-radius: 4px;
+            background-color: rgb(255, 255, 255);
+            margin-right: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Formularios en HTML</h1>
+
+    <h2>Formulario sencillo</h2>
+    <!-- los br son saltos de linea -->
+
+    <form class="simple-form">
+    
+    <form action="#">
+        <h2>HTML Form</h2>
+        <!-- required es para campos obligatorios pero primero debe tener un input type="submit" -->
+        <div>
+            <label for="FirstName">First Name: </label>
+            <input type="text" name="firstName" id="" required>
+        </div>
+
+        <div>
+            <label for="lastName">Last Name: </label>
+            <input type="text" name="lastName" id="">
+        </div>
+        <div>
+            <!-- para la fecha dentro del input type va "date" -->
+            <label for="dateOfBird">Date Of Bird </label>
+            <input type="date" name="dateOfBird" id="">
+        </div>
+        <div>
+            <label for="">Gender</label>
+            <div>
+                <input type="radio" name="gender" id="">Male
+                <input type="radio" name="gender" id="">Female
+                <input type="radio" name="gender" id="">Other
+            </div>
+        </div>
+        
+        <div>
+            <label for="">Owned vehicles:</label>
+            <div>
+                <input type="checkbox" name="vehicles">car
+                <input type="checkbox" name="vehicles">Motorbike
+                <input type="checkbox" name="vehicles">Bycicle
+            </div>
+        </div>
+        <div>
+            <label for="emailId">Email Id</label>
+            <input type="email" name="emailId" id="">
+        </div>
+        <div>
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="number" name="mobileNumber" id="">
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+            <button type="reset">Reset</button>
+        </div>
+
+    </form>
+    </form>
+
+
+    <h2>FORMULARIO DE CONTACTO</h2>
+    
+
+
+
+</body>
+
+</html>
