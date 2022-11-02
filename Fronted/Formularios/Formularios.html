@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-
-    <link reel="stylesheet" href="general.css">
+<!-- dos punbtos para buscar archivos de la carpeta raiz -->
+    <link reel="stylesheet" href="../general.css">
     <link rel="stylesheet" href="./css/form-styles.css">
 
 
@@ -48,18 +48,18 @@
             <div>
                 <label for="">Gender</label>
                 <div>
-                    <input type="radio" name="gender" id="">Male
-                    <input type="radio" name="gender" id="">Female
-                    <input type="radio" name="gender" id="">Other
+                    <input type="radio" name="gender" value="male">Male
+                    <input type="radio" name="gender" value="Female">Female
+                    <input type="radio" name="gender" value="Other">Other
                 </div>
             </div>
 
             <div>
                 <label for="">Owned vehicles:</label>
                 <div>
-                    <input type="checkbox" name="vehicles">car
-                    <input type="checkbox" name="vehicles">Motorbike
-                    <input type="checkbox" name="vehicles">Bycicle
+                    <input type="checkbox" name="vehicles" value="car">Car 
+                    <input type="checkbox" name="vehicles" valu="motorbike">Motorbike
+                    <input type="checkbox" name="vehicles" value="bycicle">Bycicle
                 </div>
             </div>
             <div>
@@ -81,8 +81,8 @@
     
     <h2>FORMULARIO DE CONTACTO</h2>
     <form class="contact" action="">
-        <div>
 
+        <div class="contact-left" action="">
             <input type="text" placeholder="Enter your name">
             <br>
             <input type="text" placeholder="Enter a valid email adress">
@@ -98,15 +98,46 @@
         </div>
         
 
-        
-
     </form>
+
+     <h2>Formulario de alquiler de vehículos</h2>
+     <form class="renting" action="">
+        <!-- label significa etiqueta, se usa para describir a los inputs en los formularios -->
+        <label for="tipos">Por favor, seleccione un tipo de vehiculo</label>
+        <select name="tipos" id="">
+            <option value="">Coche</option>
+            <option value="">Moto</option>
+            <option value="">Furgoneta</option>
+        </select>
+        <br>
+
+        <label for="marcas"> Seleccione marca de vehiculo</label>
+        <input list="marcas" name="marcas">
+        <!-- ID es el identificador, Datalist + Input nos genera nos genera un cuadro de inserción de datos con una lista de sugerencias-->
+        <datalist id="Marcas">
+            <option value="Fiat"></option>
+            <option value="Citroen"></option>
+            <option value="Renault"></option>
+            <option value="Audi"></option>
+            
+        </datalist>
+    
     
 
 
-    
-    
+     </form>
+
+     <h2>Formulario de inicio de sesión o login</h2>
+
+     <form action="" class="login"></form>
+     <input name="user" type="text" placeholder="Ingrese usuario">
+     <br>
+     <input name="password" type="password" placeholder="Inserte contraseña">
+     <br>
+     <input type="submit">
+     </form>
 
 </body>
+
 
 </html>

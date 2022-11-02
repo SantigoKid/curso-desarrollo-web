@@ -56,6 +56,10 @@ color:white ;
 /* el cursor cambia al simobolo de mano al pasar sobre el boton submit */
 cursor:pointer
 }
+form.contact div.contact-left {
+    padding: 10px 20px; 
+}
+
 .container{
     text-align: center;
 }
