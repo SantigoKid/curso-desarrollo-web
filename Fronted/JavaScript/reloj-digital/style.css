@@ -1,0 +1,20 @@
+@import url('https://fonts.cdnfonts.com/css/cyberfall');   
+body{ 
+background: rgb(22,22,22);
+    color:aqua;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Cyberfall', sans-serif;
+    font-size: 80px;
+    text-align: center;
+
+    margin-bottom: 0;
+}
+h3 {
+    font-family: 'Cyberfall', sans-serif;    margin-top: 0;
+}
