@@ -1,0 +1,31 @@
+@import url('https://fonts.cdnfonts.com/css/cyber-princess');
+body {
+    font-family:'Cyber Princess', sans-serif;
+    background: linear-gradient(90deg, #130206 0%, #01040f 100%);
+
+}
+h1 {
+    color: white;
+    text-shadow: 0px 8px 15px rgb(243, 243, 243);
+    text-align: center;
+}
+#palabra {
+    font-size: 60px;
+    letter-spacing: 20px;
+    font-weight: bold;
+    color: rgb(254, 254, 254);
+    text-shadow: 0px 0px 10px rgb(21, 255, 0),
+    0 10px 15px
+}
+
+#lienzo {
+    border: 3.5px solid rgb(21, 255, 0);
+    height: 300px;
+    box-shadow: 0 0 30px 7px rgba(21, 255, 0, 0.8);
+}
+
+div button {
+    box-shadow: 1px 6px 7px rgba(21, 255, 0, 0.8);
+    color: rgb(11, 251, 55);
+    background-color: #01040f;
+}
