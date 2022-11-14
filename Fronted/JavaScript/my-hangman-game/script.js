@@ -22,10 +22,12 @@ let longitud = palabra.length;
 // console.log(longitud);
 
 // Procedo qa ocultar las palabras intercambiando el texto por guiones
-let texto = ""
-for (let index = 0; index < longitud; index++);
+let texto = "";
+for (let index = 0; index < longitud; index++) {
+    texto += "_";
+}
 
-texto = "_";
+
 
 displayPalabra.innerHTML = texto;
 
@@ -37,8 +39,22 @@ const botones = document.getElementById('tablero').childNodes;
 for (let i = 0; i < botones.length; i++) {
     botones[i].addEventListener("click", juego)
 }
-
-// Procedo a hacer que el juego funcione
+ 
 function juego() {
-    console.log('Pulsaste un botón')
+let letra = this.innerHTML;
+
+letra = letra.toLowerCase();
+
+console.log('Pulsaste el botón ' + letra);
+
+for (let i = 0; i < palabra.length; i++) {
+     console.log(palabra[i]);
+
+     if {
+        
+     }
+    else if {
+        
+    }
+}
 }
