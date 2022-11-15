@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout</title>
     <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <style>
         .container {
             color: white;
@@ -15,41 +16,51 @@
 
             user-select: none;
         }
+
         .container div {
             padding: 10px;
             border: 1px solid white;
             cursor: pointer;
         }
+
         .container div:first-child {
             cursor: pointer;
         }
+
         #hideShow {
             display: none;
         }
+
         .borde {
             border: 2px solid #00a6ff;
         }
+
         .bloque {
             display: block;
         }
+
         .linea {
             display: inline;
         }
+
         /* display y visibility */
-        .flex-container{
+        .flex-container {
             display: flex;
             justify-content: center;
         }
+
         .flex-container>div {
             border: 2px solid #00a6ff;
             width: 100%;
         }
+
         .img {
             height: 150px;
             background-image: url(https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1600);
             background-position: center;
             background-size: cover;
         }
+
         .flex-container button {
             background: #00a6ff;
             border: none;
@@ -57,6 +68,158 @@
             padding: 10px;
             color: white;
             font-size: 1.1rem;
+        }
+
+        /* --------------------ancho------------------------- */
+        .divW {
+            /* width: 500px; */
+            margin: auto;
+        }
+
+        .divMW {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        /* -----------position---------- */
+        .divRel {
+            position: relative;
+            left: 30px;
+
+            border: 3px solid #00a6ff;
+        }
+
+        #btnTop {
+            border: none;
+            background-color: #00a6ff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 1.75rem;
+            cursor: pointer;
+            z-index: 5;
+
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .relative {
+            position: relative;
+            height: 200px;
+            width: 400px;
+        }
+
+        .divAbs {
+            position: absolute;
+            height: 100px;
+            width: 200px;
+
+            bottom: 10px;
+            right: 10px;
+        }
+
+        /* menu sticky */
+        nav {
+            background: #1255c1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 30px;
+            position: sticky;
+            top: 0;
+            /* Z index es la prioridad que le damos a un elemento para que se vea por ecnima de los otros */
+            z-index: 4;
+        }
+
+        nav div {
+            /* padding: 5px; */
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        nav a:hover {
+            background-color: #8ba2b9;
+
+        }
+
+        /* Posicionar texto en img */
+        .contenedor-img {
+            height: 300px;
+            width: 100%;
+
+
+            background-image: url(https://images.pexels.com/photos/34107/milky-way-stars-night-sky.jpg);
+            background-position: center;
+            background-size: cover;
+
+            position: relative;
+
+        }
+
+        .contenedor-img p {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            width: 80px;
+
+            position: absolute;
+        }
+
+        /* .top-left {
+            position: absolute;
+            top: 6px;
+            left: 10px;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 6px;
+            right: 20px;
+
+        }
+
+        .bottom-left {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+
+        }
+
+        .bottom-right {
+            position: absolute;
+            bottom: 5px;
+            right: 12px;
+
+        } */
+
+        .top {
+            top: 0;
+        }
+
+        .right {
+            right: 0;
+        }
+
+        .bottom {
+            bottom: 0;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .center {
+
+            top: 50%;
+            left: 50%;
+            /* Usamos transform translate para mover el punto de referencia con negativo para que vyaa hacia dentro */
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
@@ -97,7 +260,7 @@
     </div>
 
     <h2>Elementos de bloque</h2>
-    
+
     <p>
         Los elementos de bloque siempre empiezan en una nueva línea y toman todo el ancho disponible
     </p>
@@ -136,7 +299,8 @@
     <h2>Alterar el valor de <code>display</code> por defecto</h2>
 
     <p>
-        Es posible alterar el valor de display de los elementos para cambiar la forma en los que estos se muestran en pantalla.
+        Es posible alterar el valor de display de los elementos para cambiar la forma en los que estos se muestran en
+        pantalla.
     </p>
 
     <p>
@@ -157,10 +321,12 @@
 
     <h2>Diferencias entre <code>display: none</code> y <code>visibility: hidden</code></h2>
     <p>
-        Al ocultar un elemento con <code>display: none</code> la página se mostrará como si el elemento no estuviera ahí.
+        Al ocultar un elemento con <code>display: none</code> la página se mostrará como si el elemento no estuviera
+        ahí.
     </p>
     <p>
-        Al ocultar un elemento con <code>visibility: hidden</code> el elemento no se mostrará pero el espacio que ocupa quedará en blanco.
+        Al ocultar un elemento con <code>visibility: hidden</code> el elemento no se mostrará pero el espacio que ocupa
+        quedará en blanco.
     </p>
 
     <div class="flex-container">
@@ -181,26 +347,206 @@
         </div>
     </div>
 
+    <hr>
+
+    <h2>Anchura</h2>
+    <h3>width y max-width</h3>
+
+    <div class="container">
+        <p>
+            Como hemos mencionado anteriormente, un elemento de bloque siempre ocupa todo el ancho disponible.
+        </p>
+
+        <p>
+            Asignar una anchura con <code>width</code> evitará que un elemento de bloque se estire a los bordes de su
+            contenedor. Entonces podremos asignar su margin <code>margin:auto</code> para centrar horizontalmente el
+            elemento respecto a su contenedor. El elemento pasará a ocupar el ancho espècificado y el resto del espacio
+            sobrante será repartido equitativamente entre sus márgenes.
+        </p>
+
+        <div class="divW">
+            Este elemento <code>div</code> tiene un ancho de 500px y un margin en auto
+        </div>
+
+        <p>
+            El problema de esto, es qu eal asignar un espacio fijo nos dará problemas en pantallas pequeñas. El elemento
+            se saldrá del contenedor y el navegador añadirá una barra de scroll horizontal.
+        </p>
+
+        <p>
+            Si por el contrario, usamos <code>max-width</code>, mejorará el manejo del navegador de estos elementos.
+            Esto es muy importante a la hora de construir sitios web para dispositivos pequeños.
+        </p>
+
+        <div class="divMW">
+            Este elemento <code>div</code> tiene un ancho de 500px y un margin en auto
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2>La propiedad <code>position</code></h2>
+    <p>
+        Esta propiedad define el metodo de posicionamiento de un elemento.
+    </p>
+
+    <p>
+        Hay 5 tipos de posición.
+    </p>
+    <ul>
+        <li>static</li>
+        <li>relative</li>
+        <li>fixed</li>
+        <li>Absolute</li>
+        <li>sticky</li>
+    </ul>
+
+    <p>
+        Los elementos se posicionan con las propiedades top, left, right, bottom. Sin embargo estas propiedades no
+        funcionarán sin especificar primero la <code>position</code>. Además, dependiendo del tipo <code>position</code>
+        las propiedades funcionarán de manera distinta.
+    </p>
+
+    <h3><code>position: static</code></h3>
+
+    <p>
+        Todos los elementos tienen este valor por defecto
+    </p>
+
+    <p>
+        Las propiedades top, bottom, left y right no afectan a los elementos con posición estática.
+    </p>
+
+    <h3><code>position: relative</code></h3>
+    <p>
+        Un elemento con este valor se posicionará de manera relativa a su posición normal. Es decir, el centro del eje
+        será sobre si mismo.
+    </p>
+
+    <div class="divRel">
+        este <code>div</code> tiene <code>position: relative</code>
+    </div>
+
+    <h3><code>position: fixed</code></h3>
+    <p>
+        Un elemento con este valor se posicionará relativamente respecto a la pantalla. Lo que quiere decir que tendrá
+        la misma posición incluso si scrolleamos la web.
+    </p>
+
+    <button id="btnTop" onclick="toTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <h3><code>position: absolute</code></h3>
+
+    <p>
+        Un elemento con este valor se posicionará al respecto a su contenedor posicionado (no estático).
+    </p>
+    <p>
+        Si un elemento absoluto no tiene ancestros posicionados, usará el body y actuará como un
+        <code>position: fixed</code>
+    </p>
+
+    <div class="container relative">
+        Este elemento <code>div</code> tiene una <code>position: relative</code>
+        <div class="divAbs">
+            Este elemento <code>div</code> tiene una <code>position: absolute</code>
+        </div>
+    </div>
+
+    <!-- <div class="divAbs">
+    Esto es un div absoluto sin ancestro posicionado!!!
+          </div> -->
+
+    <h3><code>position: sticky</code></h3>
+    <p>
+        Un elemento <code>sticky</code> alternará su comportamiento entre <code>relative</code> y <code>fixed</code>
+        dependiendo de la posición del scroll de la página.
+    </p>
+
+    <nav>
+        <div>
+            <a href="">HOME</a>
+            <a href="">Services</a>
+            <a href="">Shop</a>
+        </div>
+        <div>
+            <a href="#">About us</a>
+            <a href="#">Contact us</a>
+        </div>
+    </nav>
+
+    <hr>
+
+    <h3>Posicionar texto a una imagen</h3>
+
+    <div class="contenedor-img">
+        <p class="top left">top left </p>
+        <p class="top right">Top right</p>
+        <p class="center">center</p>
+        <p class="bottom left">bottom left</p>
+        <p class="bottom right">bottom right</p>
+
+    </div>
+    <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </pre>
+
 </body>
 <script>
     function showPanel() {
-        const panel = document.getElementById('hideShow').style.display='block';
+        const panel = document.getElementById('hideShow').style.display = 'block';
     }
 
-// Quitar y esconde elemento
-const quitarFoto = document.getElementById('quitar');
-const esconderFoto = document.getElementById('esconder');
+    // Quitar y esconde elemento
+    const quitarFoto = document.getElementById('quitar');
+    const esconderFoto = document.getElementById('esconder');
 
-function quitar() {
-    quitarFoto.style.display = 'none';
-}
-function esconder() {
-    esconderFoto.style.visibility = 'hidden';
-}
-function restablecer() {
-    quitarFoto.style.display = 'block';
-    esconderFoto.style.visibility = 'visible';
-}
+    function quitar() {
+        quitarFoto.style.display = 'none';
+    }
+    function esconder() {
+        esconderFoto.style.visibility = 'hidden';
+    }
+    function restablecer() {
+        quitarFoto.style.display = 'block';
+        esconderFoto.style.visibility = 'visible';
+    }
+
+    // Botón to top
+    function toTop() {
+        // Opera, chrome,Edge, Firefox
+        document.documentElement.scrollTop = 0;
+
+        // Safari
+        document.body.scrollTop = 0;
+    }
 </script>
 
 </html>
