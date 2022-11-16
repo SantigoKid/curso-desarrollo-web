@@ -33,7 +33,7 @@ clear.onclick = () => {
     input.value = 0;
     let value1, value2 = 0;
     let operator = '';
-
+    
 }
 
 // Asignamos eventos a los operadores
@@ -97,9 +97,11 @@ result.onclick = () => {
             break;
         case '×':
             // se multiplica
+            input.value = value1 * value2;
             break;
         case '÷':
             // se divide
+            input.value = value1 / value2;
             break;
 
         default:
