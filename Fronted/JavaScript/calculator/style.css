@@ -1,49 +1,105 @@
 body {
-    width: 500px;
-    margin: 4% auto;
-    font-family: 'Source Sans Pro', sans-serif;
-    letter-spacing: 5px;
-    font-size: 1.8rem;
+    background:  linear-gradient(90deg, #bd5b70 0%, #2482a1 100%);;
+    height: 100vh;
+    margin: 0;
 }
 
-.calculator {
-    padding: 20px;
+.container {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+
+    border-radius: 15px;
+    padding: 10px 0;
+    background: rgb(45, 65, 87);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.input {
-    border: 1px solid black;
-    height: 60px;
-
-     
+.container .display,
+.container .operators {
+    width: 100%;
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
-input:hover {
-    
-}
-
-.buttons {}
-
-
-.leftPanel {
-    display: inline-block;
-}
-.numbers div {
-    display: inline-block;
-    border: 1px solid black;
-    padding: 10px;
-    cursor: pointer;
-    width: 70px;
+.container button {
+    width: 50px;
     height: 30px;
-    text-align: center;
-    margin:8px
-
+    border-radius: 1px;
 }
-.numbers div:hover {
-    box-shadow: 1px, 2px, 2px;
-    color: blueviolet;
 
+.container button:hover {
+    box-shadow: 1px 2px #2188c0;
+    cursor:pointer;
+    opacity: 0.65;
 }
-div.equal {
-    display: inline-block;
+
+.display input {
+    width: 100%;
+    height: 30px;
+    text-align: end;
+    background: #5da6cd;
+    font-weight: bold;
+    color: #1e2831;
+}
+
+
+
+.operators button {
+    background: #141d25;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.operators button:hover {
+    color: white;
+    box-shadow: 1px 2px #2188c0;
+    cursor:pointer;
+    opacity: 0.65;
+}
+
+.container .keys {
+    width: 100%;
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .numbers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-right: 20px;
+}
+
+.numbers button {
+    margin-bottom: 10px;
+}
+
+.numbers .clear {
+    color: white;
+    background: tomato;
+    border: none;
+}
+
+.container .equal {
+    height: 100%;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+.equal button {
+    height: 100%;
+    margin-bottom: 10px;
+    background: #00a6ff;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
 }
