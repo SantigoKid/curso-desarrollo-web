@@ -93,6 +93,7 @@ result.onclick = () => {
             break;
         case '-':
             // se resta
+            input.value = value1 - value2;
             break;
         case '×':
             // se multiplica
