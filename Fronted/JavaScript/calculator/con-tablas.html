@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora con tabla y código sencillo</title>
+    <style>
+        table {
+            width: 300px;
+            text-align: center;
+            padding: 10px 30px;
+            background: rgb(55, 55, 75);
+            font-family: 'SansBetween', sans-serif;
+        }
+
+        table td {
+            background: rgb(153, 153, 177);
+        }
+
+        table input {
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Digital Numbers', sans-serif;
+            font-weight: bold;
+            color: #39536a;
+            background: #b5db56;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="input">
+            </td>
+        </tr>
+        <tr>
+            <td id="suma">+</td>
+            <td id="resta">-</td>
+            <td id="multi">&times;</td>
+            <td id="division">&#247;</td>
+        </tr>
+        <td class="numeros" onclick="test(7)">7</td>
+            <td class="numeros" onclick="test(8)">8</td>
+            <td class="numeros" onclick="test(9)">9</td>
+            <td rowspan="4" id="igual">=</td>
+        </tr>
+        <tr>
+            <td class="numeros" onclick="test(4)">4</td>
+            <td class="numeros" onclick="test(5)">5</td>
+            <td class="numeros" onclick="test(6)">6</td>
+        </tr>
+        <tr>
+            <td class="numeros" onclick="test(1)">1</td>
+            <td class="numeros" onclick="test(2)">2</td>
+            <td class="numeros" onclick="test(3)">3</td>
+        </tr>
+        <tr>
+            <td class="numeros" onclick="test(0)">0</td>
+            <td class="numeros" onclick="test('.')">.</td>
+            <td id="limpiar">C</td>
+        </tr>
+    </table>
+
+</body>
+<script>
+    // botones operadores 
+    const btnSuma = document.getElementById('suma');
+    const btnResta = document.getElementById('resta');
+    const btnMulti = document.getElementById('multi');
+    const btnDiv = document.getElementById('division');
+
+    // pantalla
+    const pantalla = document.getElementById('input');
+
+    // Botones de números 
+    const numeros = document.getElementById('input');
+
+    // botón de limpiar
+    const btnLimpiar = document.getElementById('input');
+
+    // Boton de igual 
+    const btnIgual = document.getElementById('igual');
+
+    // variabls para guardar datos
+    let valor1, valor2, resultado, operador = '';
+    pantalla.value = 0; //valor por defecto en pantalla
+
+//----------------------
+
+// EVENTOS
+// evento que al pulsar un número se escriba en pantalla
+
+function test(dato) {
+    console.log('has pulsado un número');
+    console.log(dato);
+    pantalla.value += dato;
+}
+btnSuma.onclick = () => {
+        console.log('estas sumando')
+        // resultado = valor1 + valor2
+        // input.value = resultado;
+    }
+
+</script>
+
+</html>
