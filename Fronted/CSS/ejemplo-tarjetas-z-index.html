@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas</title>
+    <style>
+        .container {
+            max-width: 600px;
+            position: relative;
+        }
+
+        .card {
+            border: 1px solid black;
+            background: rgb(50, 50, 50);
+            color: white;
+            text-align: center;
+
+
+            position: absolute;
+            width: 25%;
+        }
+
+        .one {
+            top: 0;
+            left: 0;
+        }
+
+        .two {
+            top: 0;
+            left: 25%;
+        }
+
+        .three {
+            top: 0;
+            left: 50%;
+        }
+
+        .four {
+            top: 0;
+            left: 75%;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            height: 30px;
+        }
+
+        .card .red {
+            background: red;
+        }
+
+        .card .blue {
+            background: blue;
+        }
+
+        .card .green {
+            background: green;
+        }
+
+        .card .yellow {
+            background: yellowgreen;
+        }
+
+        .front {
+            background: #ddd;
+            color: black;
+
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            left: 0;
+            min-height: 112px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card one">
+            <h2 class="red">1</h2>
+            <p>
+                Lorem ipsum dolor ist amet consectetur, adipisicing elit. Ratione, quibusdam!
+            </p>
+        </div>
+        <div class="card two">
+            <h2 class="blue">2</h2>
+            <p>
+                Lorem ipsum dolor ist amet consectetur, adipisicing elit. Ratione, quibusdam!
+            </p>
+        </div>
+        <div class="card three">
+            <h2 class="green">3</h2>
+            <p>
+                Lorem ipsum dolor ist amet consectetur, adipisicing elit. Ratione, quibusdam!
+            </p>
+        </div>
+        <div class="card four">
+            <h2 class="yellow">4</h2>
+            <p>
+                Lorem ipsum dolor ist amet consectetur, adipisicing elit. Ratione, quibusdam!
+            </p>
+        </div>
+        <div class="front" id="front">
+            <p>
+                Lorem ipsum dolor ist amet consectetur, adipisicing elit.
+                Aperiam delectus, expedita deleniti, reprehenderit sed minima accusamus soluta modis
+            </p>
+        </div>
+    </div>
+
+</body>
+<script>
+    const cards = document.getElementsByClassName('card');
+    const front = document.getElementsById('front');
+
+    // Un bcle que asigne eventos a las tarjetas 
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener('mouseenter', showCard);
+        // mousenter es el evento de hover , se activa al pasar el cursor sobre el elemento
+    }
+
+    function showCard() {
+        for (let i = 0; i < cards.length; i++) {
+            // Primer se ocultan todas las tarjetas
+            cards[i].style.zIndex = 0;
+        }
+        // y finalmente mostramos la nuestra
+        this.style.zIndex = 5;
+
+        // La tarjeta desaparece transcurrido x milisegundos
+        // setTimeout(() => {
+        //     this.style.zIndex = 0;
+        // }, 3000);
+
+    }
+    // Al hacerle click al div frontal
+
+    front.onclick = () => {
+        for (let i  = 0; i  < cards.length; i ++) {
+            // Se ocultan todas las tarjetas
+            cards[i].style.zIndex = 0;
+            
+        }
+    }
+</script>
+
+</html>
