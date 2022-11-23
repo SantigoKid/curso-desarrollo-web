@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="icono-cargando.css">
 </head>
 <style>
+     div.reloj {
+            background: white;
+            /* border: 3px solid black; */
+            animation: rotate 3s ease infinite;
+        }
     button.menu {
         display: flex;
         flex-direction: column;
@@ -36,6 +41,24 @@
     .menu:hover div:nth-child(3) {
         transform: rotate(-38deg);
     }
+    .brillante {
+            /* font-family: ; */
+            font-size: 80px;
+            font-weight: 600;
+            letter-spacing: -3px;
+            color: transparent;
+            background-image: linear-gradient(45deg, deeppink, cornflowerblue);
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: 400%;
+            animation: colorChange 2s infinite;
+        }
+        @keyframes colorChange {
+
+            50% {
+                background-position: 200% 0;
+            }
+        }
 </style>
 
 <body>
@@ -50,21 +73,28 @@
 
     <hr>
 
-    <div class="wait reloj"></div>
+    <div class="wait reloj">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -150 600 800">
+            <path d="M360 64c13.255 0 24-10.745 24-24V24c0-13.255-10.745-24-24-24H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24 0 90.965 51.016 167.734 120.842 192C75.016 280.266 24 357.035 24 448c-13.255 0-24 10.745-24 24v16c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24 0-90.965-51.016-167.734-120.842-192C308.984 231.734 360 154.965 360 64z"/></svg>
+        </div>
+    
+        <hr>
+    
+        <h3>Botón de hamburguesa(menú)</h3>
+        <button class="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+    
+        <hr>
+    
+        <h3>Texto animado</h3>
+    
+    
+        <h1 class="brillante">Goza de mi flow</h1>
+    
 
-    <hr>
-
-    <h3>Botón de hamburguesa(menú)</h3>
-
-    <button class="menu">
-        <div></div>
-        <div></div>
-        <div></div>
-    </button>
-
-    <hr>
-
-    <h3>Texto animado</h3>
 
 </body>
 
