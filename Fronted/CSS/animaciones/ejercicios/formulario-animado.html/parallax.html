@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    <style>
+        body {
+            color: rgb(220, 220, 220);
+            background: rgb(40, 40, 40);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            /* height: 200px; */
+            padding: 20px;
+            background: #161616;
+            text-align: center;
+        }
+
+        .parallax {
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Efecto de parallax */
+            background-attachment: fixed;
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .parallax div {
+            background: rgba(40, 40, 40, 0.7);
+            width: 250px;
+            padding: 5px 10px;
+        }
+
+        .parallax.uno {
+            background-image: url(../../../../recursos/pexels-photo-13449836.webp);
+        }
+
+        .parallax.dos {
+            background-image: url(../../../../recursos/pexels-photo-14118994.jpeg);
+        }
+
+        .parallax.tres {
+            background-image: url(../../../../recursos/photo5.jpeg);
+        }
+
+        @media screen and (min-width: 720px) {
+            .parallax {
+                height: 900px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>efecto parallax</h1>
+    </header>
+
+    <div class="parallax uno">
+
+    <div><h2>Awaken</h2></div>
+    </div>
+    <section>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente hic eos molestiae consectetur laudantium
+            ipsam sequi. Numquam sed, minus nulla accusantium magnam, non temporibus labore vero quo eius quaerat sit.
+        </p>
+    </section>
+
+    <div class="parallax dos">
+
+    <div><h2>Elegant</h2></div>
+        </div>
+
+    <section>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam a tempore cum ab, explicabo nihil vitae dolor
+            dicta quod nisi, placeat voluptatem, error asperiores non corrupti dolores unde assumenda exercitationem?
+        </p>
+    </section>
+
+    <div class="parallax tres">
+    <div><h2>Nostalgic</h2></div>
+     </div>
+     
+    <footer></footer>
+</body>
+
+</html>
