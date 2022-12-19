@@ -9,6 +9,6 @@ inputTextArea.addEventListener("input", () => {
      // console.log(characCount.textContent, 'hola')
     // le decimos que a la constante inputTextArea le guarde el numero de letras pero sin espacios. con trim().
     let txt = inputTextArea.value.trim();
-       // la constante wordCount utiliza la varia txt y slipt lo combierte en un array y con filter filtro cada palabra y la suma 
+       // la constante wordCount utiliza la variable txt y split lo combierte en un array y con filter filtro cada palabra y la suma 
     wordCount.textContent = txt.split(/\s+/).filter((item) => item).length;
 });
