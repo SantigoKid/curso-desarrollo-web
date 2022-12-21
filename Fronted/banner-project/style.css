@@ -1,39 +1,50 @@
-/* Add some styling for the banner */
+/* body {}
+/* El contenedor base del primer banner*/
 .banner {
-    height: 60px;
-    background-color: #0064d2;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-  .banner a {
-    color: white;
-    text-decoration: none;
-  }
-  .banner .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .banner .search-form {
-    display: flex;
-    align-items: center;
-  }
-  .banner .search-form input[type="text"] {
-    width: 300px;
-    height: 32px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    padding: 0 10px;
-  }
-  .banner .search-form input[type="submit"] {
-    width: 100px;
-    height: 32px;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    background-color: #ffa928;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
+  height: 60px;
+  background-color: #0064d2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Personalización del logo  */
+.banner a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* tamaño y letra del logo */
+.banner .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Acomodación de la barra search  */
+.banner .search-form {
+  display: flex;
+  align-items: center;
+}
+
+/* Personalización de la barra search  */
+.banner .search-form input[type="text"] {
+  width: 300px;
+  height: 32px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  padding: 0 10px;
+}
+
+/* Personalización del botón search */
+.banner .search-form input[type="submit"] {
+  width: 100px;
+  height: 32px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #ffa928;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
