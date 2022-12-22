@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>efecto con JQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../general.css">
+</head>
+<style>
+    .blue {
+        background-color: cornflowerblue;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid white;
+    }
+
+    #divSlide {
+        height: 100px;
+    }
+</style>
+<body>
+    <h1>Efectos con JQuery</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis id libero sint voluptatem neque at nesciunt quod error beatae illum!</p>
+
+    <div>
+        <button id="btnShow">Mostrar</button>
+        <button id="btnHide">Ocultar</button>
+        <button id="btnToggle">Cambiar</button>
+    </div>
+
+    <h2>Fade</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi autem repellendus quisquam recusandae delectus dolore!</p>
+
+    <div>
+        <button id="btnFadeIn">FadeIn</button>
+        <button id="btnFadeOut">FadeOut</button>
+        <button id="btnFadeToggle">FadeToggle</button>
+        <button id="btnFadeTo">FadeTo</button>
+    </div>
+
+    <h2>deslizar</h2>
+    <div class="blue">Click para mostrar un div con efecto de deslizamiento 
+    </div>
+    <div class="blue" id="divSlide">Holi</div>
+
+</body>
+<script src="efectos.js"></script>
+</html>
