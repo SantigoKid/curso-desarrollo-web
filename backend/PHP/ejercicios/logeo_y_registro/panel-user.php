@@ -6,7 +6,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     $sql = 'SELECT * FROM registros';
 } elseif ($_SESSION['usertype'] == 'user') {
     $user = $_SESSION['username'];
-    $sql = "SELECT * FROM registros WHERE nombre = '$user'";
+    $sql = "SELECT * FROM registros WHERE name = '$user'";
 }
 $result = $conn->query($sql);
 
@@ -52,15 +52,18 @@ $result = $conn->query($sql);
         <?php
         if ($result->num_rows > 0) {
             echo "<tr>
+            <th>id</th>
             <th>nombre</th>
             <th>contraseña</th>
             <th>tipo de usuario</th>
             </tr>";
             // imprimir los datos de cada fila
             while ($row = $result->fetch_assoc()) {
-                echo "<tr> <td>" . $row['nombre'] . "</td>" .
+                echo "<tr> <td>" . $row['id'] . "</td>" . 
+                "<td>" . $row['name'] . "</td>" .
                     "<td>" . $row['password'] . "</td>" .
-                    "<td>" . $row['user_type'] . "</td> </tr>";
+                    
+                    "<td>" . $row['usertype'] . "</td> </tr>";
             }
         }
 

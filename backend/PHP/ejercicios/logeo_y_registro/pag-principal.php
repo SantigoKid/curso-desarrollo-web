@@ -13,7 +13,7 @@ if(isset($_POST['logout'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <style>
         /* .btn{
             display: flex;
@@ -29,7 +29,7 @@ if(isset($_POST['logout'])){
         // este if pregunta si el usuario está logeado
         if (isset($_SESSION['logged'])) {
             // aquí va el panel/botón/contenido del usuario
-            echo '<button>Ir a mi cuenta</button>';
+            echo '<a href="panel-user.php"><button>Ir a mi cuenta</button></a>';
             echo "<form action='pag-principal.php' method='post'>
             <input type='submit' value='Cerrar sesión' name='logout'>
             </form>";
