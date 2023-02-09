@@ -20,9 +20,9 @@ DELIMITER $$
 -- Cambiamos el delimitador con el fin de que el trigger se ejecute como un solo bloque
 
 -- Creamos un trigger que almacenará los datos viejos cuando hay una modificación
-CREATE TRIGGER IF NOT EXISTS after_usuarios_update
+CREATE TRIGGER IF NOT EXISTS after_regsitros_update
 AFTER UPDATE
-ON usuarios FOR EACH ROW
+ON registros FOR EACH ROW
 BEGIN
     -- Sin el delimitador, esta sentencia se ejecutaría al momento
     INSERT INTO audit (id_user, old_user, new_user, old_email, new_email, old_usertype, new_usertype)
@@ -33,7 +33,7 @@ END $$
 -- Este trigger guarda los datos de las filas borradas
 CREATE TRIGGER IF NOT EXISTS before_usuarios_delete
 BEFORE DELETE
-ON usuarios FOR EACH ROW
+ON registros FOR EACH ROW
 BEGIN
     INSERT INTO audit (id_user, old_user, old_email, old_usertype, query_type)
     VALUES (old.id, old.user, old.email, old.user_type, 'BEFORE_DELETE');
@@ -42,12 +42,12 @@ END $$
 -- Una vez hemos terminado de crear los triggers, restauramos el delimitador
 DELIMITER ;
 
-DROP TRIGGER IF EXISTS after_usuarios_update;
-DROP TRIGGER IF EXISTS before_usuarios_delete;
+DROP TRIGGER IF EXISTS after_registros_update;
+DROP TRIGGER IF EXISTS before_registros_delete;
 
 SHOW TRIGGERS;
 
-UPDATE usuarios SET user = 'Pepita' WHERE user = 'Pepa';
-UPDATE usuarios SET user = 'Jonathan' WHERE user = 'jon';
+UPDATE registros SET user = 'Pepita' WHERE user = 'Pepa';
+UPDATE registros SET user = 'Jonathan' WHERE user = 'jon';
 
-DELETE FROM usuarios WHERE id = 2;
+DELETE FROM registros WHERE id = 2;
