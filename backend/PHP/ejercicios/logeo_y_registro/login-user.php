@@ -5,7 +5,7 @@ include 'conn.php';
 if ($_SERVER['REQUEST_METHOD'] = 'POST') {
     // Recibimos las variables del form
     $user = $_POST['name'];
-    // $email = $_POST['email'];
+    // $username = $_POST['username'];
     $password = $_POST['password'];
 
     
@@ -25,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
         // Creamos una array $row con los resultados de la query del usuario
         $_SESSION['id'] = $row['id']; // Primary key
         $_SESSION['usertype'] = $row['usertype'];
-       }
+        $_SESSION['name'] = $row['name'];
+        }
     } else {
         // En caso de login incrrecto:
         header('Location: form-login.php?fallo=true');
