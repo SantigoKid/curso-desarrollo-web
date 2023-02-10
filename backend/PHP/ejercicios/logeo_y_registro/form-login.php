@@ -12,7 +12,7 @@
     <h1>Formulario de login</h1>
     <form action="login-user.php" method="post">
         <input type="text" name="name" placeholder="Introduzca usuario">
-        <input type="text" name="password" placeholder="Introduzca contraseña">
+        <input type="password"  name="password" placeholder="Introduzca contraseña">
         <input type="submit" value="Iniciar Sesión">
     </form>    
     <?php

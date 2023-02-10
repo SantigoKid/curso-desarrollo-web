@@ -1,4 +1,4 @@
--- Active: 1675956339300@@127.0.0.1@3306@formulariosphp
+-- Active: 1673864411279@@127.0.0.1@3306@formulariosphp
 
 DROP TABLE IF EXISTS audit;
 
@@ -32,14 +32,14 @@ CREATE TRIGGER IF NOT EXISTS before_registros_delete
 BEFORE DELETE
 ON registros FOR EACH ROW
 BEGIN
-    INSERT INTO audit (id_user, old_user, old_email, old_usertype, query_type)
+    INSERT INTO audit (id_name, old_name, old_email, old_usertype, query_type)
     VALUES (old.id, old.name, old.email, old.usertype, 'BEFORE_DELETE');
 END $$
 
 -- Una vez hemos terminado de crear los triggers, restauramos el delimitador
 DELIMITER ;
 
-DROP TRIGGER IF EXISTS after_registros_update;
+-- DROP TRIGGER IF EXISTS after_registros_update;
 DROP TRIGGER IF EXISTS before_registros_delete;
 
 SHOW TRIGGERS;
