@@ -37,40 +37,84 @@ $result = $conn->query($sql);
             /* justify-content: center;º */
             /* padding: 50px; */
             margin: 100px;
+            /* font-size: 40px; */
+        
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(175,28,94,1) 74%);
         }
+        p {
+        color: white;
+    }
+    h1 {
+        color: white;
+    }
         .centro {
             display: flex;
             justify-content: center;
         }
 
         table {
-            border: 3px solid black;
-            /* border-collapse: collapse; */
-            /* margin: 50px; */
-            /* display: flex; */
-            /* flex-direction: column; */
-            
-        }
+	width: 900px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    font-size: 1.5rem;
+}
 
-        th {
-            background-color: #aabbcc;
-            border: 2px solid black;
-            padding: 2px 5px;
-        }
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+    
+}
 
-        td {
-            border: 1px solid black;
-            padding: 2px 5px;
-        }
+th {
+	text-align: left;
+    background-color: #55608f;
+    /* width: 200px; */
+    cursor: default;
+}
+
+td {
+    position: relative;
+    cursor: default;
+}
+
+/* td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+} */
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+select {
+    background-color: transparent;
+    color: white;
+}
         input {
             border: none;
             outline: none;
+            background-color: transparent;
+            color: white;
+            font-size: 1rem;
         }
         .mod {
+            display: flex;
             cursor: pointer;
             /* border: 1px solid black; */
             background-color: rgb(12, 50, 80);
             color: white;
+            background-color: transparent;
+            font-size: 1rem;
         }
 
         button {
@@ -94,6 +138,17 @@ $result = $conn->query($sql);
             border-radius: 10px;
             cursor: pointer;
             transition-delay: 0.2s ;
+            color: white;
+            border: 1px solid rgba(32, 192, 255, 1); 
+        }
+        option {
+            /* background-color: transparent; */
+            color: black;
+            font-size: 1rem;
+        }
+
+        select {
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -111,7 +166,7 @@ $result = $conn->query($sql);
             <th>contraseña</th>
             <th>email</th>
             <th>tipo de usuario</th>
-            <th>Acciones</th>
+            <th>Administrar</th>
             </tr>";
             // imprimir los datos de cada fila
             while ($row = $result->fetch_assoc()) {

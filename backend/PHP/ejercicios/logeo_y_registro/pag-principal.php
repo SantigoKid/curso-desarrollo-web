@@ -15,10 +15,12 @@ if(isset($_POST['logout'])){
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <style>
-        /* .btn{
-            display: flex;
-            justify-content: center;
-        } */
+         body {
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(175,28,94,1) 74%);
+    }
+    p {
+        color: white;
+    }
     </style>
 </head>
 
