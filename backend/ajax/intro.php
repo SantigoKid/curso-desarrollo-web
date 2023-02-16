@@ -1,12 +1,22 @@
-<?php 
-$sql = 'SELECT user FROM usuarios';
-$result = $conn->query($sql);
+<!DOCTYPE html>
+<html lang="en">
 
-//  declaro un array en el que buscar la ista de usuarios
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="intro.js"></script>
 
-if ($result -> num_rows > 0) {
-    while ($row )
-}
+<body>
+    <!-- Creamos la cajita de búsqueda -->
+    <div class="search-box">
+        <input type="text" autocomplete="off" placeholder="Buscar usuario...">
+        <div class="display"></div>
+    </div>
 
-foreach ($array as $user)
-?>
+</body>
+
+</html>
