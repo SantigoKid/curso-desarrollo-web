@@ -15,7 +15,8 @@
     }
 </style>
 </head>
-<body>
+<body id="body" class="cuerpo">
+    <div id="background"></div>
 <?php
 session_start();
 include 'conn.php';
@@ -52,6 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
 }
 ?>
 </body>
+<script>
+
+</script>
 </html>
 
 

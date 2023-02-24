@@ -8,7 +8,6 @@ $selector = '';
 
 if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     $sql = 'SELECT * FROM registros';
-    
 } elseif ($_SESSION['usertype'] == 'user') {
     $user = $_SESSION['name'];
     $sql = "SELECT * FROM registros WHERE name = '$user'";
@@ -38,68 +37,61 @@ $result = $conn->query($sql);
             /* padding: 50px; */
             margin: 100px;
             /* font-size: 40px; */
-        
-        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(175,28,94,1) 74%);
+
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(175, 28, 94, 1) 74%);
         }
+
         p {
-        color: white;
-    }
-    h1 {
-        color: white;
-    }
+            color: white;
+        }
+
+        h1 {
+            color: white;
+        }
+
         .centro {
             display: flex;
             justify-content: center;
         }
 
         table {
-	width: 900px;
-	border-collapse: collapse;
-	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    font-size: 1.5rem;
-}
+            width: 900px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            font-size: 1.5rem;
+        }
 
-th,
-td {
-	padding: 15px;
-	background-color: rgba(255,255,255,0.2);
-	color: #fff;
-    
-}
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
 
-th {
-	text-align: left;
-    background-color: #55608f;
-    /* width: 200px; */
-    cursor: default;
-}
+        }
 
-td {
-    position: relative;
-    cursor: default;
-}
+        th {
+            text-align: left;
+            background-color: #55608f;
+            /* width: 200px; */
+            cursor: default;
+        }
 
-/* td:hover:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -9999px;
-  bottom: -9999px;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: -1;
-} */
+        td {
+            position: relative;
+            cursor: default;
+        }
 
-tr:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
 
 
-select {
-    background-color: transparent;
-    color: white;
-}
+        select {
+            background-color: transparent;
+            color: white;
+        }
+
         input {
             border: none;
             outline: none;
@@ -107,6 +99,7 @@ select {
             color: white;
             font-size: 1rem;
         }
+
         .mod {
             display: flex;
             cursor: pointer;
@@ -120,7 +113,7 @@ select {
         button {
             font-size: 18px;
             margin-top: 30px;
-            background: rgba(146, 142, 138, 0.5); 
+            background: rgba(146, 142, 138, 0.5);
             width: 200px;
             height: 45px;
             border: none;
@@ -131,16 +124,17 @@ select {
         button:hover {
             font-size: 18px;
             margin-top: 30px;
-            background: rgba(146, 142, 138, 1); 
+            background: rgba(146, 142, 138, 1);
             width: 200px;
             height: 45px;
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition-delay: 0.2s ;
+            transition-delay: 0.2s;
             color: white;
-            border: 1px solid rgba(32, 192, 255, 1); 
+            border: 1px solid rgba(32, 192, 255, 1);
         }
+
         option {
             /* background-color: transparent; */
             color: black;
@@ -150,75 +144,65 @@ select {
         select {
             font-size: 1rem;
         }
+
+        .search {
+            border: 1px solid blanchedalmond;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Tabla de los usuarios de la BD</h1>
-    <div class="centro">
-    <table>
+    <div>
+        <div class="container">
+            <form action="">
+                <input class="search" type="text" name="users" onkeyup="showUser(this.value)">
+            </form>
+            <div id="display">Los datos de la persona se mostrarán aquí...</div>
+        </div>
 
-        <?php
-        if ($result->num_rows > 0) {
-            echo "<tr>
-            <th>id</th>
-            <th>nombre</th>
-            <th>contraseña</th>
-            <th>email</th>
-            <th>tipo de usuario</th>
-            <th>Administrar</th>
-            </tr>";
-            // imprimir los datos de cada fila
-            while ($row = $result->fetch_assoc()) {
-                // echo "<tr> <td>" . $row['id'] . "</td>" . 
-                // "<td>" . $row['name'] . "</td>" .
-                //     "<td>" . $row['password'] . "</td>" .
-                    
-                //     "<td>" . $row['usertype'] . "</td> </tr>";
+        <h1>Tabla de los usuarios de la BD</h1>
+        <div class="centro">
+            <table>
 
-                if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
-                    if($row['usertype'] == 'admin') {
-                        $user1 = 'admin';
-                        $user2 = 'user';
-                    } else {
-                        $user1 = 'user';
-                        $user2 = 'admin';
-                    }
-                    $selector = "<select name='usertype'>
-                    <option name='usertype' value='". $user1 ."'>". $user1 ."</option>
-                    <option name='usertype' value='". $user2 ."'>". $user2 ."</option>
-                    </select>";
-                }
+                <?php
 
-                echo "<tr> <form action='update-user.php' method='post'>
-                           <td>" . "<input name='id' hidden value='" . $row['id'] . "'>" . $row['id'] . "</td>" . 
-                          "<td>" . "<input name='name' value='" . $row['name'] . "'>" . "</td>" .
-                          "<td>" . "<input name='password' value='" . $row['password'] . "'>" . "</td>" .
-                          "<td>" . "<input name='email' value='" . $row['email'] . "'>" . "</td>
-                          <td>" .
-                          $selector
-                          .
-                          "</td> 
-                          <td> <input class='mod' type='submit' name='edit' value='Modificar'>
-                               <input class='mod' type='submit' name='delete' value='Eliminar'>
-                          </form> 
-                          </tr>";
-            }
-        }
+                if ($result->num_rows > 0) include 'tabla.php';
+                ?>
+            </table>
+        </div>
+        <a href="pag-principal.php">
+            <button>Página Principal</button>
+        </a>
 
-        $conn->close();
-        ?>
-    </table>
     </div>
-    <a href="pag-principal.php">
-        <button>Página Principal</button>
-     </a>
-
-
-
-
-
 
 </body>
+
+<script>
+    function showUser(text) {
+        let display = document.getElementById('display');
+
+
+        // si el input está vacio, el div también se vacia
+        if (text == '') {
+            display.innerHTML = '';
+            return;
+
+
+        } else {
+            let ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+
+
+                    display.innerHTML = this.responseText;
+                }
+            };
+            ajax.open ('GET', 'panel-user.php?q=' + text, true);
+            ajax.send();
+        }
+    }
+</script>
 
 </html>

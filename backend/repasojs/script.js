@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $('input.pass').on('keyup  ', function () {
         // quiero comparar los valores de los inputs
-        valor1 = $('input[name="pass"]').val();
-        valor2 = $('input[name="confirm"]').val();
+       let valor1 = $('input[name="pass"]').val();
+       let valor2 = $('input[name="confirm"]').val();
 
         $('input[type="submit"]').attr('disabled', true);
 
@@ -53,7 +53,19 @@ $(document).ready(function () {
               pos = 'login';
         }
 
+        $('div#background').fadeToggle(1000);
+
         // $('.container').slideToggle(700);
+    });
+
+    $('#btnClass').click(function () {
+        $('body').toggleClass('cuerpo');
+        console.log('funciona');
+      });
+    $('#btnBG').click(function () {
+        $('div#background').fadeToggle(1000);
+        console.log('funciona');
+ 
     });
 });
 

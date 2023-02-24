@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to bottom right, #aabbcc, #1269c0);
+    background-image: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(175, 28, 94, 1) 74%);
     transition: all 1s;
     /* viewport height/width (se ajusta al tamaño de la ventana/dispositivo) */
     height: 100vh;
@@ -15,7 +15,7 @@ body {
 }
 
 div#background {
-    background-image: linear-gradient(to bottom right, #100203, #e51613);;
+    background-image:  linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(210,176,191,1) 0%, rgba(214,34,136,1) 73%);
     width: 100vw;
     height: 100vh;
 
@@ -31,6 +31,7 @@ div.divBtn {
 
     width: 285px;
     margin: 20px;
+    background-color: transparent;
 }
 
 .divBtn button {
@@ -48,7 +49,9 @@ div.divBtn {
 }
 
 div.big-container {
-    background-color: #072d535e;
+    /* background-color: #072d535e; */
+    background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     height: 300px;
     width: 250px;
     border-radius: 15px;
@@ -138,7 +141,6 @@ input[type='submit']:not(:disabled):hover {
  }  */
 
 .cuerpo {
-    background-image: linear-gradient(to bottom right, #e3e9ef, #07427d);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 13%, rgba(41,45,46,1) 100%, rgba(31,222,224,1) 212%, rgba(210,176,191,1) 255%);
     transition: all 1s;
 }
-
