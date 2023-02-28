@@ -8,7 +8,7 @@ body {
     /* height: 100vh; */
     /* width: 100%; */
     background-color: #000;
-    background-image: url('https://t3.ftcdn.net/jpg/04/70/78/18/360_F_470781837_uabePPd2gwxzSv7dKhXkbaKWqXKPGy08.jpg');
+    background-image: url('./imagenes/Btoyzkt.jpg');
 
 }
 
@@ -25,11 +25,6 @@ a {
 a:hover {
     color: orange;
 }
-/* 
-div {
-    background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80');
-    
-} */
 
 .navbar {
     width: 100%;
@@ -128,11 +123,25 @@ footer {
 
 .follow {
    display: flex;
-   justify-content: space-between;
+   justify-content: space-around;
    font-size: 20px;
    /* border: solid 1px white; */
 
    padding-top: 50px;
+   padding-bottom: 50px;
+}
+
+.button {
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
 }
 
 .iconitos {
@@ -143,6 +152,65 @@ footer {
 
 .iconitos a {
     font-size: 28px;
+}
+
+.second {
+    margin: 50px;
+    display: block;
+    text-align: center;
+}
+
+.present {
+    width: 100%;
+   
+}
+
+.present h1 {
+    padding: 30px 30px ;
+    background-color: rgba(0, 3, 0, 0.9); 
+    font-size: 2rem;
+}
+
+.present p{
+    padding: 30px 30px ;
+}
+
+.imagecave {
+    width: 85%;
+}
+
+.present p {
+    background-color: rgba(0, 3, 0, 0.9); 
+    font-size: 2rem;
+}
+
+.infor {
+    display: flex;
+    justify-content: space-around;
+    /* justify-content: flex-start; */
+    text-align: center;
+    border: 1px solid whitesmoke;
+
+    background-color: #000;
+}
+.imagecavedos {
+    height: 600px;
+    width: 100%;
+    
+}
+
+.infor h1 {
+    text-align: center;
+}
+
+.inf *{
+    margin: 20px;
+}
+
+.show {
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 
